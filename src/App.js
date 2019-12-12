@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+//import React from 'react';
+import React, { Component } from 'react';
+import Counter from './counter/Counter';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//                React.Component
+class App extends React.Component {
+  //OLD WAY OF DOING SHIT
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {counterValue: 0 }
+  //   // storage^ 
+  //   //object always a hash
+  //    this.inc = this.inc.bind(this)
+  // }
+
+
+  //            key,      value
+  // state = { counterValue: 0 }
+
+  // to bind, new way is to make the function with = and =>
+  // inc = () => {
+  //   this.setState ({ counterValue: this.state.counterValue + 1})
+  // }
+
+  // dec = () => {
+  //   this.setState({ counterValue: this.state.counterValue -1 })
+  // }
+
+    render() {
+      return(
+        <div>
+          
+          {/* <p>
+            { this.state.counterValue }
+          </p>
+          <button onClick={this.inc} >+</button>
+          <button onClick={this.dec}>-</button> */}
+          <Counter counterName='red' />
+          <Counter counterName='blue' />
+          <Counter counterName='green' />
+          <Counter counterName='black' />
+        </div>
+      )
+    }
 }
 
 export default App;
